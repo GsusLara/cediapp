@@ -1,0 +1,7 @@
+@use "../colores" as colores;
+
+.Principal{
+    width: 100vw;
+    height: 100vh;
+    background-color: colores.$bg_principal;
+}
