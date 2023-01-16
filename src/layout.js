@@ -1,18 +1,26 @@
-import { BrowserRouter, Route, Routes} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Home from "./pages/home"
+import injectContext from "./store/appContext";
+
+import Home from "./pages/home";
 import Demo from "./pages/demo/demo";
+import Navbar from "./components/navbar";
+import Footer from "./components/footer";
 
-export default function Layout() {
+const Layout = () => {
   return (
     <div>
-            <BrowserRouter>
-                <Routes>
-                    <Route element={<Home />} path="/" />
-                    <Route element={<Demo />} path="/demo" />
-                    <Route element={<h1>Not found!</h1>} />
-                </Routes>
-            </BrowserRouter>
-        </div>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route element={<Home />} path="/" />
+          <Route element={<Demo />} path="/demo" />
+          <Route element={<h1>Not found!</h1>} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </div>
   )
-}
+};
+
+export default injectContext(Layout);

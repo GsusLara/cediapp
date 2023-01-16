@@ -2,6 +2,6 @@
 
 .Principal{
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 113px);
     background-color: colores.$bg_principal;
 }
