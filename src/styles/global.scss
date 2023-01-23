@@ -1,6 +1,27 @@
 //bootstrap
 @use "~bootstrap/scss/bootstrap";
 
+//colores
+@use "./colores" as colores;
+
 // estilos de paginas
 @use "./pages/home";
-@use "./pages/demo"
+@use "./pages/acciones";
+@use "./pages/informes";
+@use "./pages/trabajo";
+@use "./pages/usuarios";
+
+// estilos de componentes 
+@use "./Components/navbar";
+
+//estilos generales
+.Principal{
+    margin-top: 66px;
+    width: 100vw;
+    height: calc(100vh - 123px);
+    background-color: colores.$bg_principal;
+}
+
+
+
+

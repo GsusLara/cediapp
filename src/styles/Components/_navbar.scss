@@ -1,0 +1,10 @@
+@use "../colores" as colores;
+
+.logo{
+    height: 3rem;
+}
+.salir{
+ color: colores.$color_institucional;
+ font-weight: bold;
+ cursor: pointer;
+}
