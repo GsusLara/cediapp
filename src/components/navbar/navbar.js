@@ -1,28 +1,45 @@
-import React from 'react'
+import { Link } from "react-router-dom";
+import Fodlogo from "../../assets/Fod.png";
+
 
 export default function Navbar() {
     return (
-        <nav className="navbar navbar-expand-lg bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">Navbar</a>
+                <img src={Fodlogo} alt="Fundacion Omar Dengo" className="p-1 mr-1 navbar-brand" width={50} height={50} />
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">Home</a>
+                        <li >
+                            <Link to="/" className="nav-link">
+                                Dashboard
+                            </Link>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Features</a>
+                        <li >
+                            <Link to="/Acciones" className="nav-link">
+                                Gestion de Acciones
+                            </Link >
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Pricing</a>
+                        <li >
+                            <Link to="/Trabajo" className="nav-link">
+                                Cargas de Trabajo
+                            </Link>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link disabled">Disabled</a>
+                        <li >
+                            <Link to="/Informes" className="nav-link">
+                                Generación de Informes
+                            </Link>
+                        </li>
+                        <li >
+                            <Link to="/Usuarios" className="nav-link">
+                                Gestión de Usuarios
+                            </Link>
                         </li>
                     </ul>
+                    <div className="collapse navbar-collapse" />
+                    <Link to="/usuarios" className="nav-link salir">Cerrar Sesión</Link>
                 </div>
             </div>
         </nav>
