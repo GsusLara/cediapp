@@ -27,8 +27,15 @@ const getState = ({ getStore, getActions, setStore }) => {
                     setStore({ equipos: [] })
                 }
             },
-            limpiarEquipos: () =>
+            limpiarEquipos: () => {
                 setStore({ equipos: [] })
+            },
+            revisarEquipos: (id) => {
+                const store = getStore();
+                const equipos = [...store.equipos];
+                equipos[id]['IdEstadoEquipo'] = 2;
+                setStore({ ...store, equipos });
+            }
         }
     }
 }
