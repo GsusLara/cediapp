@@ -2,11 +2,11 @@ import { useState, useRef, useContext } from 'react';
 import { Context } from '../../store/appContext';
 
 export default function CargarAcciones() {
-  const { store, actions } = useContext(Context);
+  const { actions } = useContext(Context);
   const inputRef = useRef(null);
   const [buttonDisabled, setButtonDisabled] = useState(true);
   const [files, setFiles] = useState([]);
-  
+
   const capturaArchivos = (event) => {
     setFiles(event.target.files);
     setButtonDisabled(false);
@@ -33,17 +33,15 @@ export default function CargarAcciones() {
     actions.getAcciones();
   };
   return (
-    <div className="col-12 text-center">
-          <h3 className="mb-4">Cargar Acciones al Sistema</h3>
-          <div className="row justify-content-center">
-            <div className="col-4 mb-4">
-              <div className=" input-group">
-                <input type="file" className="form-control" multiple onChange={(e) => capturaArchivos(e)} ref={inputRef} />
-                <button className="btn btn-outline-primary" type="button" id="button-addon2" disabled={buttonDisabled} onClick={() => handleClick()}>Cargar</button>
-              </div>
-              <p className="textoSecundario">Seleccione los archivos de Acción en formato xls</p>
-            </div>
-          </div>
+    <div className="col-12 d-flex justify-content-center align-items-center">
+      <div className="col-6 text-center">
+        <h4 className="mb-4">Cargar Acciones al Sistema</h4>
+        <div className="input-group">
+          <input type="file" className="form-control" multiple onChange={(e) => capturaArchivos(e)} ref={inputRef} />
+          <button className="btn btn-outline-primary" type="button" id="button-addon2" disabled={buttonDisabled} onClick={() => handleClick()}>Cargar</button>
         </div>
+        <p className="mt-2">Seleccione los archivos de Acción en formato xls</p>
+      </div>
+    </div>
   )
 }

@@ -27,8 +27,35 @@ const getState = ({ getStore, getActions, setStore }) => {
                     setStore({ equipos: [] })
                 }
             },
-            limpiarEquipos: () =>
+            cambioEstadoAccion: async (estado, accion) => {
+                const myHeaders = new Headers();
+                myHeaders.append("Content-Type", "application/json");
+                const info = {
+                    "id_estado": estado,
+                    "id_accion": accion
+                };
+                try {
+                    const response = await fetch("http://localhost:3245/estadoAccion", {
+                        method: 'PUT',
+                        headers: myHeaders,
+                        body: JSON.stringify(info),
+                        redirect: 'follow' 
+                    });
+                    const data = await response.json();
+                    alert(JSON.stringify(data));
+                } catch (error) {
+                    console.error(error);
+                }
+            },
+            limpiarEquipos: () => {
                 setStore({ equipos: [] })
+            },
+            revisarEquipos: (id) => {
+                const store = getStore();
+                const equipos = [...store.equipos];
+                equipos[id]['IdEstadoEquipo'] = 2;
+                setStore({ ...store, equipos });
+            }
         }
     }
 }

@@ -8,7 +8,6 @@
 @use "./pages/home";
 @use "./pages/acciones";
 @use "./pages/informes";
-@use "./pages/trabajo";
 @use "./pages/usuarios";
 
 // estilos de componentes 
@@ -17,8 +16,8 @@
 //estilos generales
 .Principal{
     margin-top: 66px;
-    width: 100vw;
-    height: calc(100vh - 123px);
+    min-height: calc(100vh - 123px);
+    max-width: 100%;
 }
 
 

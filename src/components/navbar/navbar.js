@@ -23,11 +23,6 @@ export default function Navbar() {
                             </Link >
                         </li>
                         <li >
-                            <Link to="/Trabajo" className="nav-link">
-                                Cargas de Trabajo
-                            </Link>
-                        </li>
-                        <li >
                             <Link to="/Informes" className="nav-link">
                                 Generación de Informes
                             </Link>
