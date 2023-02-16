@@ -2,7 +2,7 @@ import { useState, useRef, useContext } from 'react';
 import { Context } from '../../store/appContext';
 
 export default function CargarAcciones() {
-  const { store, actions } = useContext(Context);
+  const { actions } = useContext(Context);
   const inputRef = useRef(null);
   const [buttonDisabled, setButtonDisabled] = useState(true);
   const [files, setFiles] = useState([]);

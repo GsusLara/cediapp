@@ -8,11 +8,11 @@ import AsignarAccion from "../../components/asignarAccion";
 export default function Acciones() {
   const { store, actions } = useContext(Context);
   const [funcionalidad, setfuncionalidad] = useState(null)
-  useEffect(() => {
-    setfuncionalidad()
-    actions.getAcciones();
-  }, [store.Acciones]
-  )
+  // useEffect(() => {
+  //   setfuncionalidad()
+  //   actions.getAcciones();
+  // }, [store.Acciones]
+  // )
   switch (funcionalidad) {
     case "revisar":
       return (
